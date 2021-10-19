@@ -1,5 +1,11 @@
 {
   "dependencies": {
+    "com.integraldx.uniapi": {
+      "version": "file:UniAPI",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {}
+    },
     "com.unity.collab-proxy": {
       "version": "1.11.2",
       "depth": 0,
