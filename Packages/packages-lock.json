@@ -4,7 +4,9 @@
       "version": "file:UniAPI",
       "depth": 0,
       "source": "embedded",
-      "dependencies": {}
+      "dependencies": {
+        "com.newtonsoft.json": "1.0.1"
+      }
     },
     "com.newtonsoft.json": {
       "version": "1.0.1",
