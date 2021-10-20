@@ -6,9 +6,9 @@ namespace Integraldx.UniAPI.Editor.OpenAPISchema
     [JsonObject]
     public class OpenAPI
     {
-        [JsonProperty("openapi")] public string OpenAPIVersion { get; set; }
+        [JsonProperty("openapi"), JsonRequired] public string OpenAPIVersion { get; set; }
 
-        [JsonProperty("info")] public IDictionary<string, object> Info { get; set; }
+        [JsonProperty("info"), JsonRequired] public OpenAPIInfo Info { get; set; }
 
         [JsonProperty("servers")] public IList<object> Servers { get; set; }
 
