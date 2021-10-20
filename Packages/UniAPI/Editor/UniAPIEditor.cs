@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using Integraldx.UniAPI.Editor.OpenAPISchema;
+using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;
 
@@ -24,8 +25,9 @@ namespace Integraldx.UniAPI.Editor
         {
             var settings = FetchSettings();
 
-            var dict = JsonUtility.FromJson<OpenAPI>(settings.APISpecificationFile.text);
-            Debug.Log(dict);
+            var openAPI = JsonConvert.DeserializeObject<OpenAPI>(settings.APISpecificationFile.text);
+            Debug.Log(openAPI);
+            Debug.Log(openAPI.OpenAPIVersion);
         }
 
         private static UniAPISettings FetchSettings()
