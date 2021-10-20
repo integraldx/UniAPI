@@ -1,7 +1,7 @@
 using System;
-using System.Collections.Generic;
 using Integraldx.UniAPI.Editor.OpenAPISchema;
 using Newtonsoft.Json;
+using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
@@ -26,8 +26,8 @@ namespace Integraldx.UniAPI.Editor
             var settings = FetchSettings();
 
             var openAPI = JsonConvert.DeserializeObject<OpenAPI>(settings.APISpecificationFile.text);
-            Debug.Log(openAPI);
-            Debug.Log(openAPI.OpenAPIVersion);
+
+            PromptAPIInfos(openAPI);
         }
 
         private static UniAPISettings FetchSettings()
@@ -54,6 +54,13 @@ namespace Integraldx.UniAPI.Editor
                     Debug.LogError(errorMessage);
                     throw new ArgumentNullException(errorMessage);
             }
+        }
+
+        private static void PromptAPIInfos(OpenAPI openAPI)
+        {
+            Debug.Log($"Using OpenAPI version {openAPI.OpenAPIVersion}");
+
+            Debug.Log($"Converting {openAPI.Info.Title} : {openAPI.Info.Version}");
         }
     }
 }
