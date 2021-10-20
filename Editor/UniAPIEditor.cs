@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using Integraldx.UniAPI.Editor.OpenAPISchema;
 using UnityEditor;
 using UnityEngine;
 
@@ -21,14 +22,20 @@ namespace Integraldx.UniAPI.Editor
         [MenuItem("UniAPI/Generate")]
         public static void GenerateCodes()
         {
-            var resultGUIDs = AssetDatabase.FindAssets("t:UniAPISettings");
+            var settings = FetchSettings();
 
-            UniAPISettings settings;
+            var dict = JsonUtility.FromJson<OpenAPI>(settings.APISpecificationFile.text);
+            Debug.Log(dict);
+        }
 
-            switch (resultGUIDs.Length)
+        private static UniAPISettings FetchSettings()
+        {
+            var searchResult = AssetDatabase.FindAssets("t:UniAPISettings");
+
+            switch (searchResult.Length)
             {
                 case 1:
-                    var resultGUIDString = resultGUIDs[0];
+                    var resultGUIDString = searchResult[0];
 
                     if (!GUID.TryParse(resultGUIDString, out var resultGUID))
                     {
@@ -37,17 +44,14 @@ namespace Integraldx.UniAPI.Editor
 
                     UniAPIEditorSettings.instance.SettingsGUID = resultGUID;
 
-                    settings = AssetDatabase.LoadAssetAtPath<UniAPISettings>(
+                    return AssetDatabase.LoadAssetAtPath<UniAPISettings>(
                         AssetDatabase.GUIDToAssetPath(UniAPIEditorSettings.instance.SettingsGUID));
-                    break;
 
                 default:
-                    Debug.LogError("There is none, two or more UniAPI settings file! Make sure there is only one.");
-                    return;
+                    var errorMessage = "There is none, two or more UniAPI settings file! Make sure there is only one.";
+                    Debug.LogError(errorMessage);
+                    throw new ArgumentNullException(errorMessage);
             }
-
-            var dict = JsonUtility.FromJson<Dictionary<string, object>>(settings.APISpecificationFile.text);
-            Debug.Log(dict);
         }
     }
 }
