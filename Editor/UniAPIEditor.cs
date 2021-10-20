@@ -48,7 +48,7 @@ namespace Integraldx.UniAPI.Editor
                         AssetDatabase.GUIDToAssetPath(UniAPIEditorSettings.instance.SettingsGUID));
 
                 default:
-                    var errorMessage = "There is none, two or more UniAPI settings file! Make sure there is only one.";
+                    const string errorMessage = "There is none, two or more UniAPI settings file! Make sure there is only one.";
                     Debug.LogError(errorMessage);
                     throw new ArgumentNullException(errorMessage);
             }
