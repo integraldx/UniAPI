@@ -12,7 +12,7 @@ namespace Integraldx.UniAPI.Editor.OpenAPISchema
 
         [JsonProperty("servers")] public IList<object> Servers { get; set; }
 
-        [JsonProperty("paths")] public IDictionary<string, object> Paths { get; set; }
+        [JsonProperty("paths")] public IDictionary<string, OpenAPIPathItem> Paths { get; set; }
 
         [JsonProperty("components")] public IDictionary<string, object> Components { get; set; }
 
