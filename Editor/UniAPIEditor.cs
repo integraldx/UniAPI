@@ -1,7 +1,6 @@
 using System;
 using Integraldx.UniAPI.Editor.OpenAPISchema;
 using Newtonsoft.Json;
-using NUnit.Framework;
 using UnityEditor;
 using UnityEngine;
 
@@ -61,6 +60,21 @@ namespace Integraldx.UniAPI.Editor
             Debug.Log($"Using OpenAPI version {openAPI.OpenAPIVersion}");
 
             Debug.Log($"Converting {openAPI.Info.Title} : {openAPI.Info.Version}");
+
+            foreach (var path in openAPI.Paths)
+            {
+                if (path.Value.Get != null)
+                {
+                    Debug.Log($"{path.Key}/Get : {path.Value.Get}");
+                }
+
+                if (path.Value.Delete != null)
+                {
+                    Debug.Log($"{path.Key}/Get : {path.Value.Get}");
+
+                }
+                Debug.Log($"{path.Key} : {path.Value}");
+            }
         }
     }
 }
