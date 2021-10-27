@@ -68,12 +68,40 @@ namespace Integraldx.UniAPI.Editor
                     Debug.Log($"{path.Key}/Get : {path.Value.Get}");
                 }
 
+                if (path.Value.Put != null)
+                {
+                    Debug.Log($"{path.Key}/Put : {path.Value.Put}");
+                }
+
+                if (path.Value.Post != null)
+                {
+                    Debug.Log($"{path.Key}/Post : {path.Value.Post}");
+                }
+
                 if (path.Value.Delete != null)
                 {
-                    Debug.Log($"{path.Key}/Get : {path.Value.Get}");
-
+                    Debug.Log($"{path.Key}/Delete : {path.Value.Get}");
                 }
-                Debug.Log($"{path.Key} : {path.Value}");
+
+                if (path.Value.Options != null)
+                {
+                    Debug.Log($"{path.Key}/Options : {path.Value.Options}");
+                }
+
+                if (path.Value.Head != null)
+                {
+                    Debug.Log($"{path.Key}/Head : {path.Value.Head}");
+                }
+
+                if (path.Value.Patch != null)
+                {
+                    Debug.Log($"{path.Key}/Patch : {path.Value.Patch}");
+                }
+
+                if (path.Value.Trace != null)
+                {
+                    Debug.Log($"{path.Key}/Trace : {path.Value.Trace}");
+                }
             }
         }
     }
