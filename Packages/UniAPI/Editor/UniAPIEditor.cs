@@ -1,4 +1,6 @@
 using System;
+using System.IO;
+using Integraldx.UniAPI.Editor.Generator;
 using Integraldx.UniAPI.Editor.OpenAPISchema;
 using Newtonsoft.Json;
 using UnityEditor;
@@ -27,6 +29,14 @@ namespace Integraldx.UniAPI.Editor
             var openAPI = JsonConvert.DeserializeObject<OpenAPI>(settings.APISpecificationFile.text);
 
             PromptAPIInfos(openAPI);
+
+            var generator = new InterfaceGenerator();
+
+            var content = generator.GenerateInterface(openAPI);
+
+            File.WriteAllText("./Assets/Interface.cs", content);
+
+            AssetDatabase.Refresh();
         }
 
         private static UniAPISettings FetchSettings()
