@@ -1,0 +1,10 @@
+{
+  "name": "com.integraldx.uniapi",
+  "version": "0.1.0",
+  "displayName": "UniAPI",
+  "description": "Provides OpenAPI codegen service that is adapted for unity use",
+  "type": "tool",
+  "dependencies": {
+    "com.newtonsoft.json": "1.0.1"
+  }
+}
