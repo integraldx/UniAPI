@@ -1,7 +1,7 @@
 using System;
 using System.IO;
 using Integraldx.UniAPI.Editor.Generator;
-using Integraldx.UniAPI.Editor.OpenAPISchema;
+using Integraldx.UniAPI.Editor.OpenAPISpecification;
 using Newtonsoft.Json;
 using UnityEditor;
 using UnityEngine;

@@ -1,5 +1,5 @@
 using System.Text;
-using Integraldx.UniAPI.Editor.OpenAPISchema;
+using Integraldx.UniAPI.Editor.OpenAPISpecification;
 using NUnit.Framework;
 
 namespace Integraldx.UniAPI.Editor.Generator
