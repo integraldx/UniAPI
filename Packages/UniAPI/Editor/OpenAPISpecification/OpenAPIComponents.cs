@@ -6,7 +6,7 @@ namespace Integraldx.UniAPI.Editor.OpenAPISpecification
     [JsonObject]
     public class OpenAPIComponents
     {
-        [JsonProperty("schemas")] public Dictionary<string, object> Schemas { get; set; }
+        [JsonProperty("schemas")] public Dictionary<string, OpenAPISchema> Schemas { get; set; }
 
         [JsonProperty("responses")] public Dictionary<string, object> Responses { get; set; }
 
