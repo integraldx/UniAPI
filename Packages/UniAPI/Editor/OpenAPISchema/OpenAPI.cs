@@ -14,7 +14,7 @@ namespace Integraldx.UniAPI.Editor.OpenAPISchema
 
         [JsonProperty("paths")] public IDictionary<string, OpenAPIPathItem> Paths { get; set; }
 
-        [JsonProperty("components")] public IDictionary<string, object> Components { get; set; }
+        [JsonProperty("components")] public OpenAPIComponents Components { get; set; }
 
         [JsonProperty("security")] public IList<object> Security { get; set; }
 
