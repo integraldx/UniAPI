@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace Integraldx.UniAPI.Editor.OpenAPISchema
+namespace Integraldx.UniAPI.Editor.OpenAPISpecification
 {
     [JsonObject]
     public class OpenAPIInfo
