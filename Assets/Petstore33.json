@@ -46,14 +46,12 @@
                 "properties": {
                   "additionalMetadata": {
                     "type": "string",
-                    "description": "Additional data to pass to server",
-                    "required": false
+                    "description": "Additional data to pass to server"
                   },
                   "file": {
                     "type": "string",
                     "format": "binary",
-                    "description": "file to upload",
-                    "required": false
+                    "description": "file to upload"
                   }
                 }
               }
@@ -247,7 +245,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schema/Pet"
+                    "$ref": "#/components/schemas/Pet"
                   }
                 }
               },
@@ -255,7 +253,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schema/Pet"
+                    "$ref": "#/components/schemas/Pet"
                   },
                   "xml": {
                     "wrapped": true,
@@ -355,13 +353,11 @@
                 "properties": {
                   "name": {
                     "type": "string",
-                    "description": "Updated name of the pet",
-                    "required": false
+                    "description": "Updated name of the pet"
                   },
                   "status": {
                     "type": "string",
-                    "description": "Updated status of the pet",
-                    "required": false
+                    "description": "Updated status of the pet"
                   }
                 }
               }
@@ -482,7 +478,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/definitions/Order"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -521,12 +517,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/definitions/Order"
+                  "$ref": "#/components/schemas/Order"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/definitions/Order"
+                  "$ref": "#/components/schemas/Order"
                 }
               }
             }
@@ -583,7 +579,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/User"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -621,12 +617,12 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/definitions/User"
+                  "$ref": "#/components/schemas/User"
                 }
               },
               "application/xml": {
                 "schema": {
-                  "$ref": "#/definitions/User"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -661,7 +657,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/definitions/User"
+                "$ref": "#/components/schemas/User"
               }
             }
           }
@@ -794,7 +790,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/User"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
@@ -821,7 +817,7 @@
               "schema": {
                 "type": "array",
                 "items": {
-                  "$ref": "#/definitions/User"
+                  "$ref": "#/components/schemas/User"
                 }
               }
             }
