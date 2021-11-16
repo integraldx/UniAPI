@@ -10,5 +10,7 @@ namespace Integraldx.UniAPI.Editor
         private TextAsset _apiSpecificationFile;
 
         public TextAsset APISpecificationFile => _apiSpecificationFile;
+
+        [SerializeField] private string _targetDirectoryPath;
     }
 }
