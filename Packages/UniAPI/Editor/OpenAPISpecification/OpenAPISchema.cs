@@ -58,7 +58,7 @@ namespace Integraldx.UniAPI.Editor.OpenAPISpecification
 
         [JsonProperty("additionalProperties"), CanBeNull] public object AdditionalProperties { get; set; }
 
-        [JsonProperty("format"), CanBeNull] public Dictionary<string, object> Format { get; set; }
+        [JsonProperty("format"), CanBeNull] public string Format { get; set; }
 
         [JsonProperty("default"), CanBeNull] public Dictionary<string, object> Default { get; set; }
 
