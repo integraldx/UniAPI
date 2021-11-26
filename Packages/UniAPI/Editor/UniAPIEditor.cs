@@ -30,11 +30,16 @@ namespace Integraldx.UniAPI.Editor
 
             PromptAPIInfos(openAPI);
 
-            var generator = new InterfaceGenerator();
+            var interfaceGenerator = new InterfaceGenerator();
+            var schemaGenerator = new SchemaGenerator();
 
-            var content = generator.GenerateInterface(openAPI);
+            var interfaceContent = interfaceGenerator.GenerateInterface(openAPI);
 
-            File.WriteAllText("./Assets/Interface.cs", content);
+            File.WriteAllText("./Assets/Interface.cs", interfaceContent);
+
+            var schemaContent = schemaGenerator.GenerateSchema(openAPI);
+
+            File.WriteAllText("./Assets/Models.cs", schemaContent);
 
             AssetDatabase.Refresh();
         }
