@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using Integraldx.UniAPI.Editor.CodeGenerator;
 using Integraldx.UniAPI.Editor.OpenAPISpecification;
 
 namespace Integraldx.UniAPI.Editor.Generator
@@ -17,12 +19,9 @@ namespace Integraldx.UniAPI.Editor.Generator
         {
             var schemaDict = FindSchemaList();
 
-            foreach (var keyValuePair in schemaDict)
+            foreach (var @class in schemaDict.Select(keyValuePair => CSharpClass.GetNewClass(keyValuePair.Key)))
             {
-                _stringBuilder.Append($"public class {keyValuePair.Key}\n");
-                _stringBuilder.Append("{\n");
-                _stringBuilder.Append("}\n");
-                _stringBuilder.Append("\n");
+                _stringBuilder.Append(@class);
             }
 
             return _stringBuilder.ToString();
