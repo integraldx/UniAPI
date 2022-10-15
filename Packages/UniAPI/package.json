@@ -5,6 +5,6 @@
   "description": "Provides OpenAPI codegen service that is adapted for unity use",
   "type": "tool",
   "dependencies": {
-    "com.newtonsoft.json": "1.0.1"
+    "com.unity.nuget.newtonsoft-json": "3.0.2"
   }
 }
